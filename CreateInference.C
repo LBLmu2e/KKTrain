@@ -15,7 +15,7 @@ void CreateInference(const char* bname,const char* suffix=""){
     string modelname = string("model/") + string(bname) + string(".h5");
     string infername = string("code/") + string(bname) +string(suffix) + string(".hxx");
     //Parsing the saved Keras .h5 file into RModel object
-    SOFIE::RModel model = SOFIE::PyKeras::Parse(modelname);
+    SOFIE::RModel model = SOFIE::RModelParser::Parse(modelname);
 
   //Generating inference code
   model.Generate();
