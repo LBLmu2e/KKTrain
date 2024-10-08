@@ -75,7 +75,7 @@ for filename in files:
         for tree in treename:
             trkana = file[tree]["trkana"].arrays(filter_name="/" + DownstreamElectron + "|" + DownstreamElectronTrackStrawHit + "|" + DownstreamElectronTrackStrawHitMC + "|" + DownstreamElectronMCTruth + "/i") ##treename needs to be a list of strings
             trkana = trkana[(trkana['dem.goodfit']==1)&(trkana['dem.status']>0)&(trkana['demmc.proc']==167)]
-            hstate = ak.concatenate(trkana['demtsh.state']).to_numpy()
+            hstate = ak.concatenate(trkana['demtsh.state']).np.”()
             udoca = ak.concatenate(trkana['demtsh.udoca']).to_numpy()
             udoca = np.absolute(udoca)
             cdrift = ak.concatenate(trkana['demtsh.cdrift']).to_numpy()
